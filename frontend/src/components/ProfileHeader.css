@@ -1,0 +1,225 @@
+.profile-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 50px 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-top: 20px;
+  animation: fadeIn 0.6s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.profile-left {
+  flex-shrink: 0;
+}
+
+.profile-pic-container {
+  position: relative;
+  text-align: center;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea, #764ba2, #f093fb) border-box;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3), 
+              0 0 40px rgba(118, 75, 162, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: scaleIn 0.8s ease-out;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4), 
+              0 0 60px rgba(118, 75, 162, 0.3);
+}
+
+.upload-label {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.upload-label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%);
+}
+
+.file-input {
+  display: none;
+}
+
+.profile-right {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 42px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  font-weight: 800;
+  animation: slideInLeft 0.7s ease-out;
+  letter-spacing: -0.5px;
+}
+
+.profile-branch {
+  font-size: 22px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+  font-weight: 700;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.profile-bio {
+  font-size: 17px;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  animation: slideInLeft 0.9s ease-out;
+  font-weight: 500;
+}
+
+.name-input {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.branch-input {
+  font-size: 18px;
+  color: #667eea;
+}
+
+.skills-section {
+  margin: 25px 0;
+}
+
+.skills-section h3 {
+  font-size: 22px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.add-skill {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.skill-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.skill-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.add-skill-btn {
+  padding: 8px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.add-skill-btn:hover {
+  background: #764ba2;
+}
+
+.profile-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-name {
+    font-size: 28px;
+  }
+
+  .profile-branch {
+    font-size: 18px;
+  }
+
+  .profile-actions {
+    justify-content: center;
+  }
+
+  .add-skill {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-header {
+    padding: 20px 10px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 24px;
+  }
+}
